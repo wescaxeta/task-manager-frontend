@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager — Login</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-wrapper">
+
+    <!-- Login -->
+    <div id="card-login" class="auth-card">
+        <h1>Bem-vindo 👋</h1>
+        <p>Entre na sua conta para gerenciar suas tarefas.</p>
+
+        <div id="error-login" class="error-msg hidden"></div>
+
+        <form id="form-login">
+            <div class="form-group">
+                <label for="login-email">E-mail</label>
+                <input type="email" id="login-email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Senha</label>
+                <input type="password" id="login-password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" id="btn-login" class="btn btn-primary" data-label="Entrar">Entrar</button>
+        </form>
+
+        <p class="auth-footer">
+            Não tem conta?
+            <button class="btn-link" id="btn-show-register">Cadastre-se</button>
+        </p>
+    </div>
+
+    <!-- Register -->
+    <div id="card-register" class="auth-card hidden">
+        <h1>Criar conta</h1>
+        <p>Preencha os dados abaixo para se cadastrar.</p>
+
+        <div id="error-register" class="error-msg hidden"></div>
+
+        <form id="form-register">
+            <div class="form-group">
+                <label for="register-name">Nome</label>
+                <input type="text" id="register-name" placeholder="Seu nome" required>
+            </div>
+            <div class="form-group">
+                <label for="register-email">E-mail</label>
+                <input type="email" id="register-email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Senha</label>
+                <input type="password" id="register-password" placeholder="Mínimo 8 caracteres" required>
+            </div>
+            <div class="form-group">
+                <label for="register-confirm">Confirmar senha</label>
+                <input type="password" id="register-confirm" placeholder="Repita a senha" required>
+            </div>
+            <button type="submit" id="btn-register" class="btn btn-primary" data-label="Cadastrar">Cadastrar</button>
+        </form>
+
+        <p class="auth-footer">
+            Já tem conta?
+            <button class="btn-link" id="btn-show-login">Entrar</button>
+        </p>
+    </div>
+
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

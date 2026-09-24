@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <h1>📋 Minhas Tarefas</h1>
+    <button id="btn-logout" class="btn btn-secondary" style="width:auto">Sair</button>
+</header>
+
+<main class="app-main">
+
+    <div class="toolbar">
+        <select id="filter-status">
+            <option value="">Todos os status</option>
+            <option value="pending">Pendente</option>
+            <option value="in_progress">Em andamento</option>
+            <option value="done">Concluída</option>
+        </select>
+        <button id="btn-new-task" class="btn btn-primary" style="width:auto">+ Nova tarefa</button>
+    </div>
+
+    <div id="loading" class="loading">Carregando tarefas...</div>
+
+    <div id="task-list" class="task-list hidden"></div>
+
+    <div id="empty-state" class="empty-state hidden">
+        <div class="icon">📭</div>
+        <p>Nenhuma tarefa encontrada.<br>Clique em <strong>+ Nova tarefa</strong> para começar.</p>
+    </div>
+
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal-overlay hidden">
+    <div class="modal">
+        <h2 id="modal-title">Nova Tarefa</h2>
+        <form id="task-form">
+            <div class="form-group">
+                <label for="task-title">Título *</label>
+                <input type="text" id="task-title" placeholder="O que precisa ser feito?" required>
+            </div>
+            <div class="form-group">
+                <label for="task-description">Descrição</label>
+                <textarea id="task-description" placeholder="Detalhes opcionais..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="task-status">Status</label>
+                <select id="task-status">
+                    <option value="pending">Pendente</option>
+                    <option value="in_progress">Em andamento</option>
+                    <option value="done">Concluída</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="task-due-date">Prazo</label>
+                <input type="date" id="task-due-date">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btn-cancel" class="btn btn-secondary">Cancelar</button>
+                <button type="submit" id="btn-save" class="btn btn-primary">Salvar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast"></div>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/tasks.js"></script>
+</body>
+</html>
