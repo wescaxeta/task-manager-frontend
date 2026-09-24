@@ -170,4 +170,6 @@ const Tasks = {
     },
 };
 
+if (typeof module !== 'undefined') module.exports = Tasks;
+
 document.addEventListener('DOMContentLoaded', () => Tasks.init());

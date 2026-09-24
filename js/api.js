@@ -27,3 +27,5 @@ const Api = {
 
     postPublic: (endpoint, body) => Api.request('POST', endpoint, body, false),
 };
+
+if (typeof module !== 'undefined') module.exports = Api;

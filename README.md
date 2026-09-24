@@ -1,5 +1,6 @@
 # task-manager-frontend
 
+![Tests](https://github.com/wescaxeta/task-manager-frontend/actions/workflows/tests.yml/badge.svg)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
@@ -50,9 +51,21 @@ const CONFIG = {
 ```bash
 git clone https://github.com/wescaxeta/task-manager-frontend
 cd task-manager-frontend
-# Abra o index.html no navegador ou use um servidor local:
+# Use um servidor local (não abra o index.html diretamente — fetch não funciona via file://)
 npx serve .
+# ou: python3 -m http.server 3000
 ```
+
+Acesse: **http://localhost:3000**
+
+## Testes
+
+```bash
+npm install
+npm test
+```
+
+33 testes unitários cobrindo `api.js`, `auth.js` e `tasks.js` com Jest + jsdom.
 
 ## Estrutura
 

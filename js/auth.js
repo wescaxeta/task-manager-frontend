@@ -83,4 +83,6 @@ const Auth = {
     },
 };
 
+if (typeof module !== 'undefined') module.exports = Auth;
+
 document.addEventListener('DOMContentLoaded', () => Auth.init());
